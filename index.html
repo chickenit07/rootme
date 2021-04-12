@@ -1,16 +1,25 @@
-<form action="http://challenge01.root-me.org/web-client/ch22/index.php?action=profile" method="post" enctype="multipart/form-data">
-		<div class="form-group">
-		<label>Username:</label>
-		<input type="text" name="username" value="123">
-		</div>
-		<br>		
-		<div class="form-group">
-		<label>Status:</label>
-		<input type="checkbox" name="status" checked>
-		</div>
-		<br>	
-		<button type="submit">Submit</button>
-		</form>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+
 <script>
-	document.querySelector("form").submit();
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+    var formData = new FormData();
+  formData.append("username", "123");
+  formData.append("status", "on");
+  xhttp.open("POST", "demo_get.asp", true);
+
+  xhttp.send();
+}
 </script>
+
+</body>
+</html>
